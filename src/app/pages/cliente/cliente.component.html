@@ -1,0 +1,39 @@
+<div class="title">
+  <div class="row">
+    <div class="col">
+      <mat-icon> person_outline </mat-icon>
+      <span> {{ function === 'editar' ? 'Editar' : 'Novo' }} Cliente </span>
+    </div>
+  </div>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name"> Nome </label>
+    <input type="text" id="name"
+      formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label for="cnpj"> CNPJ </label>
+    <input type="text" id="cnpj"
+      formControlName="cnpj">
+  </div>
+
+  <div class="form-group">
+    <label for="status"> Status </label>
+    <select name="" id="status"
+      formControlName="status">
+      <option value="Ativo"> Ativo </option>
+      <option value="Inativo"> Inativo </option>
+    </select>
+  </div>
+
+  <div class="form-group actions">
+  <button type="submit" mat-flat-button [disabled]="!form.valid"> SALVAR </button>
+  </div>
+</form>
+
+<div *ngIf="loaderService.showLoader" class="loader-wrapper">
+  <div class="loader"></div>
+</div>

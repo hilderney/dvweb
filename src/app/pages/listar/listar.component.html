@@ -1,0 +1,44 @@
+
+<div class="title">
+  <div class="row">
+    <div class="col">
+      <mat-icon> person_outline </mat-icon>
+      <span> Listagem de Clientes </span>
+    </div>
+    <div class="col f-grow-0">
+      <a mat-flat-button [routerLink]="['../cadastrar/cliente']">
+        <mat-icon> add </mat-icon> NOVO
+      </a>
+    </div>
+  </div>
+  <div class="msg">
+    {{msg}}
+  </div>
+</div>
+
+<mat-list role="list">
+    <mat-list-item role="listitem"  *ngFor="let client of clientList">
+      <div class="row">
+        <div class="col bold">
+          {{client.name}}
+        </div>
+        <div class="col small">
+          {{client.cnpj ? (client.cnpj  | cnpj) : ''}}
+        </div>
+        <div class="col ph-2 align-right">
+          <div class="status-wrapper">
+            <div class="led" [ngClass]="client.status === 'Ativo' ? 'ativo' : 'inativo'"></div> {{client.status}}
+          </div>
+        </div>
+        <div class="col f-grow-0">
+          <button mat-flat-button (click)="abrirEditar(client.id)"> EDITAR </button>
+        </div>
+      </div>
+    </mat-list-item>
+</mat-list>
+
+<span class="d-flex pv-2"> Exibindo {{clientList.length}} de {{clientList.length}} clientes </span>
+
+<div *ngIf="loaderService.showLoader" class="loader-wrapper">
+  <div class="loader"></div>
+</div>

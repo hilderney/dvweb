@@ -1,1 +1,182 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Monda", Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* font-family: 'Monda', sans-serif, Roboto, "Helvetica Neue" */
+  font-family: 'Monda', Roboto, sans-serif !important;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  background-color: #E5E5E5;
+  color: #000000;
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  height: auto !important;
+}
+
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+  font-family: "Monda", Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 15px !important;;
+  font-weight: 500;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content,
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 0 !important;
+}
+
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+  padding: 0 10px !important;
+}
+
+mat-list-item .mat-list-item-content {
+  margin: 7px 0 !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #616161;
+  height: 85px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex: 1 1 100%;
+  overflow-y: auto;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 51px;
+}
+
+.col {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 calc(100% / 12);
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.title {
+  padding-top: 71px;
+  border-bottom: 1px solid gray;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-grow-0 {
+  flex-grow: 0;
+}
+
+.f-grow-1 {
+  flex-grow: 1;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.p-0 { padding: 0; }
+.p-1 { padding: 7px; }
+.p-2 { padding: 14px; }
+.p-3 { padding: 21px; }
+.ph-1 { padding: 0 7px; }
+.ph-2 { padding: 0 14px; }
+.ph-3 { padding: 0 21px; }
+.pv-1 { padding: 7px 0; }
+.pv-2 { padding: 14px 0; }
+.pv-3 { padding: 21px 0; }
+.pt-1 { padding-top: 7px; }
+.pt-2 { padding-top: 14px; }
+.pt-3 { padding-top: 21px; }
+.pt-4 { padding-top: 28px; }
+.pt-5 { padding-top: 35px; }
+
+
+@media screen and (min-width: 1441px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html, body, header, .container, .content {
+    min-width: 300px;
+    line-height: 28px !important;
+  }
+  .row{
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+  }
+
+  .container {
+    width: 100%;
+
+  }
+}
